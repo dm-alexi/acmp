@@ -3,7 +3,7 @@
 int main()
 {
     int a, b, n, m;
-    FILE *f=fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 
     fscanf(f, "%d%d", &a, &b);
     n = a, m = b;
