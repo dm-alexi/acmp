@@ -7,12 +7,12 @@ int main()
     int b = 0, k = 0, i;
     FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 
-    fscanf(f, "%s %s", s, t);
+    fscanf(f, "%s%s", s, t);
     for(i = 0; i < 4; ++i)
     {
-        if(s[i]==t[i])
+        if(s[i] == t[i])
             ++b;
-        else if(strchr(t, s[i])!=NULL)
+        else if(strchr(t, s[i]) != NULL)
             ++k;
     }
     fprintf(q, "%d %d", b, k);

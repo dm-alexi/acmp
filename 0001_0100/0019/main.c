@@ -7,7 +7,7 @@ int main()
     char c1, c2, c3;
     FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 
-    fscanf(f, "%c%d %c%d %c%d", &c1, &y1, &c2, &y2, &c3, &y3);
+    fscanf(f, "%c%d%c%d%c%d", &c1, &y1, &c2, &y2, &c3, &y3);
     x1 = c1 - 'A', x2 = c2 - 'A', x3 = c3 - 'A', --y1, --y2, --y3;
     for (int i = 0; i < 8; ++i)
         if (i == x1 || i == x2)

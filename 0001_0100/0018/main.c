@@ -22,7 +22,7 @@ int main()
 {
     int a, i;
     int *d = (int*)calloc(N, sizeof(int));
-    FILE *f=fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 
     fscanf(f, "%d", &a);
     d[0] = 1;

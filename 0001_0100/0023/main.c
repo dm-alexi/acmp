@@ -6,7 +6,7 @@ int main()
     FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 
     fscanf(f, "%d", &n);
-    for(int i = 1; i <= n / 2; ++i)
+    for (int i = 1; i <= n / 2; ++i)
         if(!(n % i))
             s += i;
     fprintf(q, "%d", s + n);

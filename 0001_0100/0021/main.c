@@ -5,7 +5,7 @@ int main()
     int a, b, c;
     FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 
-    fscanf(f, "%d %d %d", &a, &b, &c);
+    fscanf(f, "%d%d%d", &a, &b, &c);
     if (a > b)
         a ^= b ^= a ^= b;
     if (a > c)

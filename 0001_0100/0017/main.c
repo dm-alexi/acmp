@@ -7,7 +7,7 @@ int main()
     FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 
     fscanf(f, "%d", &n);
-    p=(int *)malloc(sizeof(int)*n);
+    p = (int*)malloc(sizeof(int) * n);
     for(i = 0; i < n; ++i)
         fscanf(f, "%d ", p + i);
     for(i = 1; i < n; ++i)
