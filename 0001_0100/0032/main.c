@@ -27,9 +27,9 @@ int fsort(char *s, int up)
 
 int main()
 {
+    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
     int a, b;
     char s[11], t[11];
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 
     fscanf(f, "%s%s", s, t);
     fprintf(q, "%d", fsort(s, 0) - fsort(t, 1));

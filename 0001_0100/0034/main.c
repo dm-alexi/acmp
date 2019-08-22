@@ -3,9 +3,9 @@
 
 int main()
 {
+    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
     int n, k, m = 1, r = 0, i, a = 0;
     char *p;
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 
     fscanf(f, "%d%d\n", &n, &k);
     if (n > k)

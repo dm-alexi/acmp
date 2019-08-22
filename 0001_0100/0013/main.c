@@ -3,12 +3,12 @@
 
 int main()
 {
-    char s[5], t[5];
-    int b = 0, k = 0, i;
     FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+    char s[5], t[5];
+    int b = 0, k = 0;
 
     fscanf(f, "%s%s", s, t);
-    for(i = 0; i < 4; ++i)
+    for (int i = 0; i < 4; ++i)
     {
         if(s[i] == t[i])
             ++b;

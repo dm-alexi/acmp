@@ -8,6 +8,7 @@ int derange(int n)
 int c(int n, int k)
 {
     int a = 1, b = 1;
+
     while (n > k)
         a *= n, b *= n - k, --n;
     return a / b;
@@ -15,8 +16,9 @@ int c(int n, int k)
 
 int main()
 {
-    int n, k;
     FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+    int n, k;
+
     fscanf(f, "%d%d", &n, &k);
     fprintf(q, "%d", c(n, k) * derange(n - k));
     return 0;

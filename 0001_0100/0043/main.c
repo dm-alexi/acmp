@@ -2,9 +2,9 @@
 
 int main()
 {
+    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
     int m = 0, t = 0;
     char c;
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 
     while ((c = getc(f)) != EOF)
     {

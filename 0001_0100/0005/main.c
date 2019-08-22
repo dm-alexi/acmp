@@ -2,8 +2,8 @@
 
 int main()
 {
-    int n, i, odd = 0, b[100];
     FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+    int n, i, odd = 0, b[100];
 
     fscanf(f, "%d", &n);
     for (i = 0; i < n; ++i)

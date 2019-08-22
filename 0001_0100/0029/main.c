@@ -5,8 +5,8 @@
 
 int main()
 {
-    int n, *p, s, prev = 0;
     FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+    int n, *p, s, prev = 0;
 
     fscanf(f, "%d", &n);
     p = (int*)malloc(sizeof(int) * n);

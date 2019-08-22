@@ -2,8 +2,8 @@
 
 int main()
 {
-    int n, max = 1, c, res, lres, last, cur;
     FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+    int n, max = 1, c, res, lres, last, cur;
 
     fscanf(f, "%d", &n);
     if (n > 1)

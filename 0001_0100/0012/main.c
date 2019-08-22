@@ -12,11 +12,11 @@ int between(int x, int y, int x1, int y1, int x2, int y2, int x3, int y3)
 
 int main()
 {
+    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
     int n, k = 0, x, y, x1, y1, x2, y2, x3, y3, x4, y4;
 
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
     fscanf(f, "%d", &n);
-    while(n--)
+    while (n--)
     {
         fscanf(f, "%d%d%d%d%d%d%d%d%d%d", &x, &y, &x1, &y1, &x2, &y2, &x3, &y3, &x4, &y4);
         if (between(x, y, x1, y1, x2, y2, x3, y3) && between(x, y, x1, y1, x4, y4, x2, y2))

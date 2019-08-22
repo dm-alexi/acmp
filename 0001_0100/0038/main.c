@@ -6,6 +6,7 @@
 int play(int *p, int left, int right, int n, int *t)
 {
     int l, r;
+
     if (t[left * n + right] == KEY)
     {
         l = p[left] - play(p, left + 1, right, n, t);

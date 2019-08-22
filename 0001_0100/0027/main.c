@@ -3,9 +3,9 @@
 
 int main()
 {
+    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
     int w, h, n, i, j, x1, y1, x2, y2;
     char *d;
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 
     fscanf(f, "%d%d%d", &w, &h, &n);
     d = (char*)calloc(w * h, 1);
@@ -17,7 +17,7 @@ int main()
                 d[w * i + j] = 1;
     }
     for (i = 0, n = 0; i < h; ++i)
-        for(j = 0; j < w; ++j)
+        for (j = 0; j < w; ++j)
             n += d[w * i + j];
     fprintf(q, "%d", w * h - n);
     return 0;

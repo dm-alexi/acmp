@@ -3,9 +3,9 @@
 
 int main()
 {
+    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
     int m, n;
     char *s = "Absent", *p;
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 
     fscanf(f, "%d%d", &m, &n);
     p = (char*)malloc(n + 1);
