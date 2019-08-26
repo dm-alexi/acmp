@@ -9,7 +9,7 @@ int main()
 
     fscanf(f, "%d", &n);
     p = (char*)malloc(2 * n);
-    for (int i = 0; i < 2 * n; ++i)
+    for (int i = 3; i < 2 * n; i += 2)
         p[i] = 1;
     for (int i = 3; i * i < 2 * n; i += 2)
         if (p[i])
@@ -20,4 +20,3 @@ int main()
     fprintf(q, "%d", m);
     return 0;
 }
-
