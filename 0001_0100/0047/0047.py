@@ -1,6 +1,5 @@
 with open("input.txt", "r") as f, open("output.txt", "w") as q:
-    n = int(f.read())
-    d = n
+    d = n = int(f.read())
     s = sum(int(x) for x in str(n))
     for i in (x for x in range(2, n // 2 + 1) if n % x == 0):
         t = sum(int(x) for x in str(i))

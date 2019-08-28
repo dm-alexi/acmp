@@ -4,7 +4,7 @@ with open("input.txt", "r") as f, open("output.txt", "w") as q:
     x = s - y
     if x > y:
         x, y = y, x
-    q.write(' '.join((str(i) for i in (x, y))))
+    q.write('{} {}'.format(x, y))
         
     
            

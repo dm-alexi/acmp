@@ -2,8 +2,7 @@ def derange(n):
     return 1 if n == 0 else 0 if n == 1 else n * derange(n - 1) + (-1)**n
 
 def c(n, k):
-    a = 1
-    b = 1
+    a = b = 1
     while n > k:
         a *= n
         b *= n - k

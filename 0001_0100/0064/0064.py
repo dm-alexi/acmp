@@ -10,10 +10,6 @@ with open("input.txt", "r") as f, open("output.txt", "w") as q:
     for i in range(3, 20222, 2):
         if p[i]:
             s += str(i)
-    t = [int(x) for x in f.read().split()[1:]]
-    d = ""
-    for i in t:
-        d += s[i - 1]
-    q.write(d)
+    q.write("".join(s[i - 1] for i in (int(x) for x in f.read().split()[1:])))
     
     

@@ -1,5 +1,5 @@
 with open("input.txt", "r") as f, open("output.txt", "w") as q:
-    m, t = 0, 0
+    m = t = 0
     for x in f.readline():
         if x == '0':
             t += 1

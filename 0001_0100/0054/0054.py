@@ -9,4 +9,4 @@ with open("input.txt", "r") as f, open("output.txt", "w") as q:
         for i in range(m):
             if p[i] > d[i]:
                 d[i] = p[i]
-    q.write(' '.join((str(maxmin), str(min(d)))))
+    q.write('{} {}'.format(maxmin, min(d)))

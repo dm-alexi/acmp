@@ -21,8 +21,7 @@ with open("input.txt", "r") as f, open("output.txt", "w") as q:
                     m = c
                 c = 0 if res == 0 else 1
             c += 1
-            lres = res
-            last = cur
+            lres, last = res, cur
         t = getLine(f)
         s = (int(x) for x in t.split())
     if c > m:

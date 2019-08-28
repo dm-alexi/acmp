@@ -1,4 +1,5 @@
 import re
+
 with open("input.txt", "r") as f, open("output.txt", "w") as q:
     s = f.read()
     ans = "ERROR"
