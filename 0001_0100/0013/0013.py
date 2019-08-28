@@ -1,10 +1,5 @@
 with open("input.txt", "r") as f, open("output.txt", "w") as q:
     s, t = f.read().split()
-    b = [0, 0]
-    for i, k in enumerate(s):
-        if k in t:
-            if t.index(k) == i:
-                b[0] += 1
-            else:
-                b[1] += 1
-    q.write(str(b[0]) + ' ' + str(b[1]))
+    a = sum(1 for i in range(4) if s[i] in t and t.index(s[i]) == i)
+    b = sum(1 for i in range(4) if s[i] in t) - a
+    q.write(str(a) + ' ' + str(b))
