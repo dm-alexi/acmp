@@ -9,8 +9,6 @@ typedef struct cell
 
 int add(cell **last, int k, int *l, int cur)
 {
-	if (l[k] == -2)
-		return 1;
 	if (l[k] > cur)
 	{
 		(*last)->next = (cell*)malloc(sizeof(cell));
@@ -19,7 +17,7 @@ int add(cell **last, int k, int *l, int cur)
 		(*last)->next = NULL;
 		l[k] = cur;
 	}
-	return 0;
+	return (l[k] == -2);
 }
 
 int main()
