@@ -11,5 +11,5 @@ with open("input.txt", "r") as f, open("output.txt", "w") as q:
         m[b][0] = a
         m[a][1].add(b)
         m[a][1] = set.union(m[a][1], m[b][1])
-        set.clear(m[b][1])
+        m[b][1].clear()
     q.write("Yes" if len(m[k][1]) == n - 1 else "No")
