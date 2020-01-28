@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 void fill(int m[64], int k)
 {
