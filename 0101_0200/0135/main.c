@@ -13,8 +13,8 @@ int main()
 	for (int k = 0; k < n; ++k)
 		for (int i = 0; i < n; ++i)
 			for (int j = 0; j < n; ++j)
-				if (m[i *n + k] + m[k * n + j] < m[i * n + j])
-					m[i * n + j] = m[i *n + k] + m[k * n + j];
+				if (m[i * n + k] + m[k * n + j] < m[i * n + j])
+					m[i * n + j] = m[i * n + k] + m[k * n + j];
 	for (int i = 0; i < n * n; ++i)
 		fprintf(q, "%d%c", m[i], (i + 1) % n ? ' ' : '\n');
     return 0;
