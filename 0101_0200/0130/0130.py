@@ -8,7 +8,7 @@ def board(p):
     m[p[0]][p[1]] = 0
     que = deque()
     que.append(p)
-    while len(que):
+    while que:
         x, y = que.popleft()
         if x < 7 and y < 6 and m[x + 1][y + 2] < 0:
             add(que, m, x + 1, y + 2, m[x][y])

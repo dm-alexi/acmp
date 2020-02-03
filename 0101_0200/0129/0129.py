@@ -7,7 +7,7 @@ with open("input.txt", "r") as f, open("output.txt", "w") as q:
     n, m = (int(x) for x in f.readline().split())
     s = [int(x) - 1 for x in f.read().split()]
     que = deque(i for i in range(m * n) if s[i] == 0)
-    while len(que):
+    while que:
         x = que.popleft()
         if x % m > 0 and s[x - 1] < 0:
             add(s, que, x - 1, s[x])
