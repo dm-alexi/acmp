@@ -1,24 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-void swap(int a[], int i, int j)
+void quicksort(int *a, int left, int right)
 {
-    int t = a[i];
-    a[i] = a[j];
-    a[j] = t;
-}
-
-void quicksort(int a[], int left, int right)
-{
-    int last;
+    int i, last, r;
     if (left >= right)
         return;
-    swap(a, left, (left + right) / 2);
+    r = left + rand() % (right - left + 1);
+    i = a[left], a[left] = a[r], a[r] = i;
     last = left;
-    for (int i = left + 1; i <= right; ++i)
+    for (i = left + 1; i <= right; ++i)
         if (a[i] < a[left])
-            swap(a, ++last, i);
-    swap(a, left, last);
+             r = a[i], a[i] = a[left], a[left] = r;
+    i = a[left], a[left] = a[last], a[last] = i;
     quicksort(a, left, last - 1);
     quicksort(a, last + 1, right);
 }
@@ -31,6 +26,7 @@ int main()
 
     fscanf(f, "%d", &n);
     p = (int*)malloc(sizeof(int) * n);
+    srand(time(NULL));
     for (int i = 0; i < n; ++i)
         fscanf(f, "%d", p + i);
     fscanf(f, "%lf", &s);
