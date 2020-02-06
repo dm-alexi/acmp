@@ -15,7 +15,7 @@ int main()
 {
 	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
     int n;
-    const int simp[25] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
+    const int prime[25] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
 
     fscanf(f, "%d", &n);
     while (n--)
@@ -25,10 +25,10 @@ int main()
         fscanf(f, "%d", &t);
         l = sqrt(t) + 1;
         for (int i = 0; i < 25 && t > 1; ++i)
-            if (t % simp[i] == 0)
+            if (t % prime[i] == 0)
             {
-                while (t % simp[i] == 0)
-                    t /= simp[i], ++p[j];
+                while (t % prime[i] == 0)
+                    t /= prime[i], ++p[j];
                 ++j;
             }
 		for (int i = 101; i < l && t > 1; i += 2)
