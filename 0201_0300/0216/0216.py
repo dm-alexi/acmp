@@ -1,8 +1,7 @@
 from queue import PriorityQueue
 with open("input.txt", "r") as f, open("output.txt", "w") as q:
-    n = int(f.readline())
     que = PriorityQueue()
-    for x in f.read().split():
+    for x in f.read().split()[1:]:
         que.put(-int(x))
     k = 0
     while que.qsize() > 1:
