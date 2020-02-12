@@ -19,11 +19,11 @@ int cmp(const void *x, const void *y)
 
 int main()
 {
+	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 	int n, k = 0, open = 0, m = 0;
 	struct time *p;
 
-	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
-	fscanf(f, "%d\n", &n);
+	fscanf(f, "%d", &n);
 	p = (struct time*)malloc(sizeof(struct time) * (2 * n + 2));
 	for (int i = 0, a, b, c, d; i < n; ++i)
 	{
