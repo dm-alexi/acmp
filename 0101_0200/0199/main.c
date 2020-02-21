@@ -6,26 +6,26 @@ const int m[] = {1, 5, 10, 50, 100, 500, 1000};
 
 int gcd(int m, int n)
 {
-    while (n && m)
-        if (n > m)
-            n %= m;
-        else
+	while (n && m)
+		if (n > m)
+			n %= m;
+		else
 			m %= n;
-    return n + m;
+	return n + m;
 }
 
 int derome(char *s)
 {
 	int n = 0;
 
-    for (int i = strlen(s) - 1; i >= 0; --i)
-    {
-        int k = strchr(v, s[i]) - v, g = strchr(v, s[i - 1]) - v;
-        n += m[k];
-        if (i && g < k)
+	for (int i = strlen(s) - 1; i >= 0; --i)
+	{
+		int k = strchr(v, s[i]) - v, g = strchr(v, s[i - 1]) - v;
+		n += m[k];
+		if (i && g < k)
 			n -= m[g], --i;
-    }
-    return n;
+	}
+	return n;
 }
 
 char *rome(int n, char *s)
@@ -33,18 +33,18 @@ char *rome(int n, char *s)
 	int j = 0;
 	for (int i = 6; i >= 0; --i)
 	{
-        if (n >= m[i])
-        {
+		if (n >= m[i])
+		{
 			for (int k = 0; k < n / m[i]; ++k)
-                s[j++] = v[i];
-            n %= m[i];
-        }
-        for (int k = 0; k < 6; k += 2)
+				s[j++] = v[i];
+			n %= m[i];
+		}
+		for (int k = 0; k < 6; k += 2)
 			if (n > m[k] && n + m[k] >= m[i])
 				s[j++] = v[k], s[j++] = v[i], n -= m[i] - m[k];
-    }
-    s[j] = '\0';
-    return s;
+	}
+	s[j] = '\0';
+	return s;
 }
 
 int main()

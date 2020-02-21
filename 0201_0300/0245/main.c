@@ -9,13 +9,13 @@ int cmp(const void *a, const void *b)
 int main()
 {
 	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
-    int n, *p, s = 0, c, i = 2, j = 0;
+	int n, *p, s = 0, c, i = 2, j = 0;
 
-    fscanf(f, "%d", &n);
-    p = (int*)malloc(sizeof(int) * n);
-    if (n > 0)
-    {
-    	for (int k = 0; k < n; ++k)
+	fscanf(f, "%d", &n);
+	p = (int*)malloc(sizeof(int) * n);
+	if (n > 0)
+	{
+		for (int k = 0; k < n; ++k)
 			fscanf(f, "%d", p + k);
 		s = p[0];
 		if (n > 1)
@@ -34,7 +34,7 @@ int main()
 			if (c > s)
 				s = c;
 		}
-    }
-    fprintf(q, "%d", s);
+	}
+	fprintf(q, "%d", s);
 	return 0;
 }

@@ -15,7 +15,7 @@ int main()
 		else
 		{
 			char *i = a + 1, *j = b + 1;
-            while (*i && *j && *i == *j)
+			while (*i && *j && *i == *j)
 				++i, ++j;
 			putc(*i && (!*j || *i < *j) ? *a++ : *b++, q);
 		}

@@ -22,7 +22,7 @@ int add(cell **last, int k, int *l, int cur)
 
 int main()
 {
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 	int h, m, n, *l, start, prod;
 	cell *st, *last;
 	char *s;
@@ -49,12 +49,12 @@ int main()
 	st->next = NULL;
 	st->p = start;
 	last = st;
-    while (!((st->p % n > 0 && add(&last, st->p - 1, l, l[st->p] + 1)) ||
+	while (!((st->p % n > 0 && add(&last, st->p - 1, l, l[st->p] + 1)) ||
 		(st->p % n < n - 1 && add(&last, st->p + 1, l, l[st->p] + 1)) ||
 		(st->p % (m * n) / n > 0 && add(&last, st->p - n, l, l[st->p] + 1)) ||
 		(st->p % (m * n) / n < m - 1 && add(&last, st->p + n, l, l[st->p] + 1)) ||
 		(st->p / (m * n) < h - 1 && add(&last, st->p + m * n, l, l[st->p] + 1))))
 		st = st->next;
 	fprintf(q, "%d", l[st->p] * 5 + 5);
-    return 0;
+	return 0;
 }

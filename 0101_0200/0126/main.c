@@ -3,7 +3,7 @@
 
 int main()
 {
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 	int *m, n, s;
 
 	fscanf(f, "%d", &n);
@@ -17,5 +17,5 @@ int main()
 				if (m[i * n + j] + m[j * n + k] + m[k * n + i] < s)
 					s = m[i * n + j] + m[j * n + k] + m[k * n + i];
 	fprintf(q, "%d", s);
-    return 0;
+	return 0;
 }

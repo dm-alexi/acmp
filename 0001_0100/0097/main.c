@@ -27,20 +27,20 @@ int check(int *m, int n, int k)
 
 int main()
 {
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 	int n, x1, y1, x2, y2, r, *m;
 	rect *s;
 
 	fscanf(f, "%d", &n);
-    s = (rect*)malloc(sizeof(rect) * n);
-    m = (int*)calloc(n * n, sizeof(int));
-    for (int i = 0; i < n; ++i)
+	s = (rect*)malloc(sizeof(rect) * n);
+	m = (int*)calloc(n * n, sizeof(int));
+	for (int i = 0; i < n; ++i)
 	{
 		fscanf(f, "%d%d%d%d%d", &x1, &y1, &x2, &y2, &r);
-        s[i].x1 = MIN(x1, x2) - r;
-        s[i].y1 = MIN(y1, y2) - r;
-        s[i].x2 = MAX(x1, x2) + r;
-        s[i].y2 = MAX(y1, y2) + r;
+		s[i].x1 = MIN(x1, x2) - r;
+		s[i].y1 = MIN(y1, y2) - r;
+		s[i].x2 = MAX(x1, x2) + r;
+		s[i].y2 = MAX(y1, y2) + r;
 	}
 	for (int i = 0; i < n; ++i)
 	{
@@ -50,9 +50,9 @@ int main()
 		m[i * n + i] = 1;
 	}
 	r = 0;
-    for (int i = 0; i < n; ++i)
+	for (int i = 0; i < n; ++i)
 		if (m[i * n + i])
 			r += check(m, n, i);
 	fprintf(q, "%d", r);
-    return 0;
+	return 0;
 }

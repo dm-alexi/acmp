@@ -24,7 +24,7 @@ int main()
 
 	fscanf(f, "%d%d\n", &n, &m);
 	res = (char*)malloc(n);
-    for (int i = 0; i < n; ++i)
+	for (int i = 0; i < n; ++i)
 		fscanf(f, "%c %lf\n", res + i, &d), ap[res[i] - 'a'] = d;
 	qsort(alpha, 26, 1, acmp);
 	s = (char*)malloc(m + 1);

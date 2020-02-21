@@ -21,7 +21,7 @@ void heapify(heap *h, int i)
 		small = left;
 	if (right < h->num && h->t[right].t2 < h->t[small].t2)
 		small = right;
-    if (small != i)
+	if (small != i)
 	{
 		edge tmp = h->t[small];
 		h->t[small] = h->t[i];
@@ -32,11 +32,11 @@ void heapify(heap *h, int i)
 
 void put(heap *h, int i, int d)
 {
-    int	k = h->num++;
-    edge tmp;
+	int	k = h->num++;
+	edge tmp;
 
-    h->t[k].t2 = d, h->t[k].ind = i;
-    while (k && h->t[k].t2 < h->t[(k - 1) / 2].t2)
+	h->t[k].t2 = d, h->t[k].ind = i;
+	while (k && h->t[k].t2 < h->t[(k - 1) / 2].t2)
 		tmp = h->t[k], h->t[k] = h->t[(k - 1) / 2], h->t[(k - 1) / 2] = tmp, k = (k - 1) / 2;
 }
 
@@ -77,15 +77,15 @@ int main()
 		t[a - 1]->t2 = t2;
 		t[a - 1]->next = tmp;
 	}
-    put(&h, d, 0);
-    while (h.num && s[v] < 0)
+	put(&h, d, 0);
+	while (h.num && s[v] < 0)
 	{
 		edge tmp = get(&h);
-        s[tmp.ind] = tmp.t2;
-        for (edge *e = t[tmp.ind]; e; e = e->next)
+		s[tmp.ind] = tmp.t2;
+		for (edge *e = t[tmp.ind]; e; e = e->next)
 			if (s[e->ind] < 0 && tmp.t2 <= e->t1)
 				put(&h, e->ind, e->t2);
 	}
 	fprintf(q, "%d", s[v]);
-    return 0;
+	return 0;
 }

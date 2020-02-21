@@ -20,7 +20,7 @@ void heapify(heap *h, int i)
 		small = left;
 	if (right < h->num && h->t[right].dist < h->t[small].dist)
 		small = right;
-    if (small != i)
+	if (small != i)
 	{
 		edge tmp = h->t[small];
 		h->t[small] = h->t[i];
@@ -31,11 +31,11 @@ void heapify(heap *h, int i)
 
 void put(heap *h, int i, int d)
 {
-    int	k = h->num++;
-    edge tmp;
+	int	k = h->num++;
+	edge tmp;
 
-    h->t[k].dist = d, h->t[k].ind = i;
-    while (k && h->t[k].dist < h->t[(k - 1) / 2].dist)
+	h->t[k].dist = d, h->t[k].ind = i;
+	while (k && h->t[k].dist < h->t[(k - 1) / 2].dist)
 		tmp = h->t[k], h->t[k] = h->t[(k - 1) / 2], h->t[(k - 1) / 2] = tmp, k = (k - 1) / 2;
 }
 
@@ -73,15 +73,15 @@ int main()
 		t[(a - 1) * n + b - 1] = p[a - 1], t[(b - 1) * n + a - 1] = p[b - 1];
 	}
 	h.t = (edge*)malloc(sizeof(edge) * ((n - 1) * (n - 2) / 2 + 1));
-    put(&h, 0, 0);
-    while (h.num && s[n - 1] < 0)
+	put(&h, 0, 0);
+	while (h.num && s[n - 1] < 0)
 	{
 		edge tmp = get(&h);
-        s[tmp.ind] = tmp.dist;
-        for (int i = 0; i < n; ++i)
+		s[tmp.ind] = tmp.dist;
+		for (int i = 0; i < n; ++i)
 			if (s[i] < 0 && t[tmp.ind * n + i] >= 0)
 				put(&h, i, t[tmp.ind * n + i] + tmp.dist);
 	}
 	fprintf(q, "%d", s[n - 1]);
-    return 0;
+	return 0;
 }

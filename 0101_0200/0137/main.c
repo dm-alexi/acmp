@@ -4,13 +4,13 @@
 
 int main()
 {
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 	int n, *m;
 	char r;
 
 	fscanf(f, "%d", &n);
-    m = (int*)malloc(sizeof(int) * n * n);
-    for (int i = 0; i < n * n; ++i)
+	m = (int*)malloc(sizeof(int) * n * n);
+	for (int i = 0; i < n * n; ++i)
 	{
 		fscanf(f, "%d", m + i);
 		if (m[i] == 0)
@@ -38,5 +38,5 @@ int main()
 			}
 			fprintf(q, "%c%c", r, j < n - 1 ? ' ' : '\n');
 		}
-    return 0;
+	return 0;
 }

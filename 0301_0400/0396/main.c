@@ -17,13 +17,13 @@ int cmp(const void *a, const void *b)
 int main()
 {
 	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
-    int n, m;
-    point **p, **init;
+	int n, m;
+	point **p, **init;
 
-    fscanf(f, "%d%d", &n, &m);
-    init = (point**)malloc(sizeof(point*) * m);
-    p = (point**)malloc(sizeof(point*) * (2 * n + m));
-    for (int i = 0, a, b; i < n; ++i)
+	fscanf(f, "%d%d", &n, &m);
+	init = (point**)malloc(sizeof(point*) * m);
+	p = (point**)malloc(sizeof(point*) * (2 * n + m));
+	for (int i = 0, a, b; i < n; ++i)
 	{
 		p[2 * i] = (point*)malloc(sizeof(point));
 		p[2 * i + 1] = (point*)malloc(sizeof(point));
@@ -45,7 +45,7 @@ int main()
 			--s;
 		else
 			p[i]->type = s;
-    for (int i = 0; i < m; ++i)
+	for (int i = 0; i < m; ++i)
 		fprintf(q, "%d ", init[i]->type);
-    return 0;
+	return 0;
 }

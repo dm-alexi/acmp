@@ -55,6 +55,6 @@ int main()
 			add(&last, (x + 1) * n + y - 2, m, m[st->p] + 1);
 		st = st->next;
 	}
-    fprintf(q, "%d", m[b]);
-    return 0;
+	fprintf(q, "%d", m[b]);
+	return 0;
 }

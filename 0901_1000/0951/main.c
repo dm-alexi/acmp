@@ -8,7 +8,7 @@ int dist(int x1, int y1, int x2, int y2)
 
 int main()
 {
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 	int m, n, k, *s, r, p, t;
 
 	fscanf(f, "%d%d%d", &n, &m, &k);
@@ -28,5 +28,5 @@ int main()
 				r = p;
 		}
 	fprintf(q, "%d", r);
-    return 0;
+	return 0;
 }

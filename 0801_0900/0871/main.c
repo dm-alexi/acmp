@@ -16,11 +16,11 @@ int deadend(char *s, int i, int n, char *t)
 
 int main()
 {
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
-    int n, m, a, b;
-    char *s, *t;
+	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+	int n, m, a, b;
+	char *s, *t;
 
-    fscanf(f, "%d%d", &n, &m);
+	fscanf(f, "%d%d", &n, &m);
 	s = (char*)calloc(n * n, 1);
 	t = (char*)calloc(n, 1);
 	for (int i = 0; i < m; ++i)
@@ -32,13 +32,13 @@ int main()
 	while (!a)
 	{
 		a = 1;
-        for (int i = 0; i < n; ++i)
+		for (int i = 0; i < n; ++i)
 			if (!t[i] && (b = deadend(s, i, n, t)) >= 0)
 				a = s[i * n + b] = s[b * n + i] = 0;
 	}
 	for (a = 0; a < n * n; ++a)
 		if (s[a] == 1)
 			break;
-    fprintf(q, a == n * n ? "NO" : "YES");
-    return 0;
+	fprintf(q, a == n * n ? "NO" : "YES");
+	return 0;
 }

@@ -27,5 +27,5 @@ int main()
 		m[i] = d;
 	}
 	fprintf(q, "%d", dfs(m, n, r, s - 1) - 1);
-    return 0;
+	return 0;
 }

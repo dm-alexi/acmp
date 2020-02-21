@@ -4,19 +4,19 @@
 
 struct mass
 {
-    int num;
-    char s[3];
-    char r[21];
-    int l;
+	int num;
+	char s[3];
+	char r[21];
+	int l;
 };
 
 int compare(struct mass *a, struct mass *b)
 {
-    if (a->l < b->l)
-        return -1;
-    if (a->l > b->l)
-        return 1;
-    return strcmp(a->r, b->r);
+	if (a->l < b->l)
+		return -1;
+	if (a->l > b->l)
+		return 1;
+	return strcmp(a->r, b->r);
 }
 
 void count(struct mass *p)
@@ -41,31 +41,31 @@ void count(struct mass *p)
 	case 'p':
 		d = 16380000;
 		break;
-    }
-    if (p->s[1] == 'p')
-        d *= 16380;
-    else if (p->s[1] == 't')
-        n += 6;
-    for (int i = 0; i < n; ++i)
-        p->r[i]='0';
-    d *= p->num;
-    for(; d; ++n, d /= 10)
-        p->r[n] = d % 10 + '0';
-    p->r[n] = '\0';
-    for (int i = 0; i < n / 2; ++i)
-    {
-        char c = p->r[i];
-        p->r[i] = p->r[n - i - 1];
-        p->r[n - i - 1] = c;
-    }
-    p->l = n;
+	}
+	if (p->s[1] == 'p')
+		d *= 16380;
+	else if (p->s[1] == 't')
+		n += 6;
+	for (int i = 0; i < n; ++i)
+		p->r[i]='0';
+	d *= p->num;
+	for(; d; ++n, d /= 10)
+		p->r[n] = d % 10 + '0';
+	p->r[n] = '\0';
+	for (int i = 0; i < n / 2; ++i)
+	{
+		char c = p->r[i];
+		p->r[i] = p->r[n - i - 1];
+		p->r[n - i - 1] = c;
+	}
+	p->l = n;
 }
 
 void swap(struct mass *p, int i, int j)
 {
-    struct mass t = p[i];
-    p[i] = p[j];
-    p[j] = t;
+	struct mass t = p[i];
+	p[i] = p[j];
+	p[j] = t;
 }
 
 int main()
@@ -79,7 +79,7 @@ int main()
 	for (int i = 0; i < n; ++i, ++p)
 	{
 		fscanf(f, "%d %s\n", &(p->num), p->s);
-        count(p);
+		count(p);
 	}
 	p -= n;
 	for (int i = 0, fin; i < n; ++i)

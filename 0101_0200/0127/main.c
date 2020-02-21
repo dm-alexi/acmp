@@ -41,5 +41,5 @@ int main()
 			st = st->next;
 	}
 	fprintf(q, "%d", s[b]);
-    return 0;
+	return 0;
 }

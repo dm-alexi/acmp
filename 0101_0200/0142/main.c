@@ -20,7 +20,7 @@ void heapify(heap *h, int i)
 		small = left;
 	if (right < h->num && h->t[right].dist < h->t[small].dist)
 		small = right;
-    if (small != i)
+	if (small != i)
 	{
 		edge tmp = h->t[small];
 		h->t[small] = h->t[i];
@@ -31,11 +31,11 @@ void heapify(heap *h, int i)
 
 void put(heap *h, int a, int b, int d)
 {
-    int	k = h->num++;
-    edge tmp;
+	int	k = h->num++;
+	edge tmp;
 
-    h->t[k].dist = d, h->t[k].a = a, h->t[k].b = b;
-    while (k && h->t[k].dist < h->t[(k - 1) / 2].dist)
+	h->t[k].dist = d, h->t[k].a = a, h->t[k].b = b;
+	while (k && h->t[k].dist < h->t[(k - 1) / 2].dist)
 		tmp = h->t[k], h->t[k] = h->t[(k - 1) / 2], h->t[(k - 1) / 2] = tmp, k = (k - 1) / 2;
 }
 
@@ -87,5 +87,5 @@ int main()
 		}
 	}
 	fprintf(q, "%d", len);
-    return 0;
+	return 0;
 }

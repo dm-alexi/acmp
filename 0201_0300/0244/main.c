@@ -25,5 +25,5 @@ int main()
 		fprintf(q, "FAIL");
 	else
 		fprintf(q, "OK\n%d", (m == 1 && d[0] < 2 * k ? d[0] % k : d[0]) + 1);
-    return 0;
+	return 0;
 }

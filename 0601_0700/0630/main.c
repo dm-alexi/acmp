@@ -36,7 +36,7 @@ int main()
 
 		fscanf(f, "%d", &n);
 		p = (struct guard*)malloc(sizeof(struct guard) * n);
-        for (int i = 0; i < n; ++i)
+		for (int i = 0; i < n; ++i)
 			fscanf(f, "%d%d", &p[i].start, &p[i].fin);
 		qsort(p, n, sizeof(struct guard), cmp);
 		fprintf(q, "%s\n", check(p, n) ? "Accepted" : "Wrong Answer");

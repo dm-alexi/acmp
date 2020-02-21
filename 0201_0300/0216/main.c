@@ -15,7 +15,7 @@ void heapify(heap *h, int i)
 		big = left;
 	if (right < h->num && h->t[right] > h->t[big])
 		big = right;
-    if (big != i)
+	if (big != i)
 	{
 		int tmp = h->t[big];
 		h->t[big] = h->t[i];
@@ -26,10 +26,10 @@ void heapify(heap *h, int i)
 
 void put(heap *h, int n)
 {
-    int	k = h->num++;
+	int	k = h->num++;
 
 	h->t[k] = n;
-    while (k && h->t[k] > h->t[(k - 1) / 2])
+	while (k && h->t[k] > h->t[(k - 1) / 2])
 		n = h->t[k], h->t[k] = h->t[(k - 1) / 2], h->t[(k - 1) / 2] = n, k = (k - 1) / 2;
 }
 

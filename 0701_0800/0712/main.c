@@ -3,10 +3,10 @@
 
 int main()
 {
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
-    long long w, h, n, k, min, max;
+	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+	long long w, h, n, k, min, max;
 
-    fscanf(f, "%I64d%I64d%I64d", &w, &h, &n);
+	fscanf(f, "%I64d%I64d%I64d", &w, &h, &n);
 	if (w > h)
 		w ^= h, h ^= w, w ^= h;
 	max = h > n * w ? h : n * w;
@@ -23,6 +23,6 @@ int main()
 	}
 	while (((k - 1) / w) * ((k - 1) / h) >= n)
 		--k;
-    fprintf(q, "%I64d", k);
-    return 0;
+	fprintf(q, "%I64d", k);
+	return 0;
 }

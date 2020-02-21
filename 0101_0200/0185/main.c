@@ -13,16 +13,16 @@ int check(char *m, int n, int k, char *s)
 
 int main()
 {
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
-    int n, k, x, y;
-    char *s, *m;
+	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+	int n, k, x, y;
+	char *s, *m;
 
-    fscanf(f, "%d%d", &n, &k);
-    m = (char*)calloc(n * n, 1);
-    s = (char*)calloc(n, 1);
-    while (fscanf(f, "%d%d", &x, &y) > 1)
+	fscanf(f, "%d%d", &n, &k);
+	m = (char*)calloc(n * n, 1);
+	s = (char*)calloc(n, 1);
+	while (fscanf(f, "%d%d", &x, &y) > 1)
 		m[(x - 1) * n + y - 1] = 1;
-    fprintf(q, check(m, n, k - 1, s) == n - 1 ? "Yes" : "No");
-    return 0;
+	fprintf(q, check(m, n, k - 1, s) == n - 1 ? "Yes" : "No");
+	return 0;
 
 }

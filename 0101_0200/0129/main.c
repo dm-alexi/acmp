@@ -17,7 +17,7 @@ int main()
 	}
 	while (s < last)
 	{
-        if (*s % m && t[*s - 1] < 0)
+		if (*s % m && t[*s - 1] < 0)
 			*last++ = *s - 1, t[*s - 1] = t[*s] + 1;
 		if ((*s + 1) % m && t[*s + 1] < 0)
 			*last++ = *s + 1, t[*s + 1] = t[*s] + 1;
@@ -29,5 +29,5 @@ int main()
 	}
 	for (int i = 0; i < n * m; ++i)
 		fprintf(q, "%d%c", t[i], (i + 1) % m ? ' ' : '\n');
-    return 0;
+	return 0;
 }

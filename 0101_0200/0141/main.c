@@ -3,13 +3,13 @@
 
 int main()
 {
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
-    int n, tmp, k = 0, e = 0, v;
-    char *s = "YES", *m, *lst, *st;
+	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+	int n, tmp, k = 0, e = 0, v;
+	char *s = "YES", *m, *lst, *st;
 
-    fscanf(f, "%d", &n);
-    m = (char*)malloc(n * n);
-    for (int i = 0; i < n * n; ++i)
+	fscanf(f, "%d", &n);
+	m = (char*)malloc(n * n);
+	for (int i = 0; i < n * n; ++i)
 	{
 		fscanf(f, "%d", &tmp);
 		m[i] = tmp;
@@ -32,5 +32,5 @@ int main()
 					st[k++] = i, m[i * n + v] = 0, ++e;
 	}
 	fprintf(q, e != n - 1 ? "NO" : s);
-    return 0;
+	return 0;
 }

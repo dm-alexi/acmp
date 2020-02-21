@@ -43,6 +43,6 @@ int main()
 	}
 	while (p > pmax && vcount(a, n, p - 1) <= k)
 		--p;
-    fprintf(q, "%d", p);
-    return 0;
+	fprintf(q, "%d", p);
+	return 0;
 }

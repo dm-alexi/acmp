@@ -20,7 +20,7 @@ int main()
 		r = k + 1;
 		while (p[r] == 0)
 			++r;
-        if (m <= (r - k) * p[k])
+		if (m <= (r - k) * p[k])
 		{
 			s = k + m / p[k];
 			m = 0;

@@ -28,5 +28,5 @@ int main()
 		s[i] = '\0';
 		fprintf(q, "%s", s);
 	}
-    return 0;
+	return 0;
 }
