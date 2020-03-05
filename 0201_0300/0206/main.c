@@ -52,37 +52,42 @@ edge get(heap *h)
 int main()
 {
 	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
-	int n, r, *s, a, b, t1, t2, d, v;
+	int n, *s, e, m;
 	heap h = {NULL, 0};
 	edge **t;
 
-	fscanf(f, "%d%d%d", &n, &d, &v);
-	--d, --v;
+	fscanf(f, "%d%d%d", &n, &e, &m);
+	--e;
 	t = (edge**)malloc(sizeof(edge*) * n);
 	s = (int*)malloc(sizeof(int) * n);
 	for (int i = 0; i < n; ++i)
 		s[i] = -1, t[i] = NULL;
-	fscanf(f, "%d", &r);
-	h.t = (edge*)malloc(sizeof(edge) * r);
-	for (int i = 0; i < r; ++i)
+	h.t = (edge*)malloc(sizeof(edge) * m * n);
+	for (int i = 0, k, a, b, t1, t2; i < m; ++i)
 	{
-		fscanf(f, "%d%d%d%d", &a, &t1, &b, &t2);
-		edge *tmp = t[a - 1];
-		t[a - 1] = (edge*)malloc(sizeof(edge));
-		t[a - 1]->ind = b - 1;
-		t[a - 1]->t1 = t1;
-		t[a - 1]->t2 = t2;
-		t[a - 1]->next = tmp;
+		fscanf(f, "%d%d%d", &k, &a, &t1);
+		for (int j = 1; j < k; ++j)
+		{
+			fscanf(f, "%d%d", &b, &t2);
+			edge *tmp = t[a - 1];
+			t[a - 1] = (edge*)malloc(sizeof(edge));
+			t[a - 1]->ind = b - 1;
+			t[a - 1]->t1 = t1;
+			t[a - 1]->t2 = t2;
+			t[a - 1]->next = tmp;
+			a = b;
+			t1 = t2;
+		}
 	}
-	put(&h, d, 0);
-	while (h.num && s[v] < 0)
+	put(&h, 0, 0);
+	while (h.num && s[e] < 0)
 	{
 		edge tmp = get(&h);
 		s[tmp.ind] = tmp.t2;
-		for (edge *e = t[tmp.ind]; e; e = e->next)
-			if (s[e->ind] < 0 && tmp.t2 <= e->t1)
-				put(&h, e->ind, e->t2);
+		for (edge *v = t[tmp.ind]; v; v = v->next)
+			if (s[v->ind] < 0 && tmp.t2 <= v->t1)
+				put(&h, v->ind, v->t2);
 	}
-	fprintf(q, "%d", s[v]);
+	fprintf(q, "%d", s[e]);
 	return 0;
 }
