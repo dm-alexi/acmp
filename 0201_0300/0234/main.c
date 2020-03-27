@@ -17,7 +17,7 @@ int main()
 	p = (char**)malloc(sizeof(char*) * n);
 	for (int i = 0; i < n; ++i)
 		p[i] = (char*)calloc(m, 1);
-    while (k--)
+	while (k--)
 	{
 		fscanf(f, "%d%d", &y, &x);
 		p[--y][--x] = '*';

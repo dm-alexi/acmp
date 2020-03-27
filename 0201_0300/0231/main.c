@@ -10,7 +10,7 @@ int main()
 	{
 		if (isdigit(c))
 			n = n * 10 + c - '0';
-        else if (n == 0)
+		else if (n == 0)
 		{
 			putc(c, q);
 			if (!(++i % 40))

@@ -10,7 +10,7 @@ int main()
 	fscanf(f, "%s", s);
 	k = -(s[0] == ')' || s[0] == ']');
 	for (int i = 0, n = strlen(s); k >= 0 && i < n; ++i)
-        if (s[i] == '(' || s[i] == '[')
+		if (s[i] == '(' || s[i] == '[')
 			s[t++] = s[i];
 		else if (!t)
 			k = -1;

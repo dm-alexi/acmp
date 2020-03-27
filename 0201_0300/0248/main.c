@@ -19,7 +19,7 @@ int process(char *d, int n)
 {
 	int up = isupper(*d), stop = 0;
 
-    if (!strcmp(d, "A") || !strcmp(d, "a") || !strcmp(d, "An") || !strcmp(d, "an") || !strcmp(d, "The") || !strcmp(d, "the"))
+	if (!strcmp(d, "A") || !strcmp(d, "a") || !strcmp(d, "An") || !strcmp(d, "an") || !strcmp(d, "The") || !strcmp(d, "the"))
 		return 0;
 	d[0] = tolower(d[0]);
 	for (int i = 0; i < n; ++i)
@@ -30,14 +30,14 @@ int process(char *d, int n)
 			if (d[i] == d[i + 1])
 			{
 				stop = 0;
-                if (d[i] == 'e')
+				if (d[i] == 'e')
 					d[i] = 'i';
 				else if (d[i] == 'o')
 					d[i] = 'u';
 				memmove(d + i + 1, d + i + 2, n - i - 1);
 				--n;
 			}
-    if (n > 1 && d[n - 1] == 'e')
+	if (n > 1 && d[n - 1] == 'e')
 		d[--n] = '\0';
 	if (up)
 		d[0] = toupper(d[0]);

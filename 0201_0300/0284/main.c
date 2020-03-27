@@ -15,7 +15,7 @@ int main()
 	{
 		fscanf(f, "%d%d", &k, &l);
 		--k, --l;
-        while (k <= l)
+		while (k <= l)
 			fprintf(q, "%d ", p[k++]);
 		putc('\n', q);
 	}

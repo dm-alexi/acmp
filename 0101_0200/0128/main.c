@@ -18,14 +18,14 @@ void add(cell **last, int k, int *m, int cur)
 
 int main()
 {
-    FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
-    int n, x, y, a, b, *m;
-    cell *last, *st;
+	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
+	int n, x, y, a, b, *m;
+	cell *last, *st;
 
-    fscanf(f, "%d%d%d", &n, &x, &y);
-    a = (x - 1) * n + y - 1;
-    fscanf(f, "%d%d", &x, &y);
-    b = (x - 1) * n + y - 1;
+	fscanf(f, "%d%d%d", &n, &x, &y);
+	a = (x - 1) * n + y - 1;
+	fscanf(f, "%d%d", &x, &y);
+	b = (x - 1) * n + y - 1;
 	m = (int*)malloc(n * n * sizeof(int));
 	for (int i = 0; i < n * n; ++i)
 		m[i] = -1;

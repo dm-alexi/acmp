@@ -7,7 +7,7 @@ int main()
 
 	fscanf(f, "%d:%d:%d", &h, &m, &s);
 	t = fscanf(f, "%d:%d:%d", &a, &b, &c);
-    if (t == 1)
+	if (t == 1)
 		s += a;
 	else if (t == 2)
 		m += a, s += b;

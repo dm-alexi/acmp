@@ -9,7 +9,7 @@ int main()
 	while (n--)
 	{
 		fscanf(f, "%d", &d);
-        if (d <= 0)
+		if (d <= 0)
 			k = 0;
 		else if (++k > m)
 			m = k;

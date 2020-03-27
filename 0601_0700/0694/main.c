@@ -4,6 +4,7 @@ int main()
 {
 	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 	int a, b, st, fin, n;
+
 	fscanf(f, "%d%d%d", &n, &a, &b);
 	while (--n && a <= b)
 	{

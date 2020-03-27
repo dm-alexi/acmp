@@ -14,7 +14,7 @@ int checkstr(char *s)
 			return 0;
 		else
 			s[j++] = s[i];
-    for (int i = 0; i < j / 2; ++i)
+	for (int i = 0; i < j / 2; ++i)
 		if (!((s[i] == ')' && s[j - 1 - i] == '(') || (s[i] == ']' && s[j - 1 - i] == '[') || (s[i] == '}' && s[j - 1 - i] == '{')))
 			return 0;
 	return 1;
