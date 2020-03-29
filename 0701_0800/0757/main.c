@@ -7,6 +7,6 @@ int main()
 
 	fscanf(f, "%I64d%I64d%I64d", &a, &b, &c);
 	a = c < a / 2 ? c : a / 2;
-	fprintf(q,"%I64d", a < b / 6 ? a : b / 6);
+	fprintf(q, "%I64d", a < b / 6 ? a : b / 6);
 	return 0;
 }
