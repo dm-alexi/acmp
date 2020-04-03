@@ -48,7 +48,7 @@ int main()
 				l *= 2, fnt = (int*)realloc(fnt, sizeof(int) * l);
 		}
 		else if(!strcmp(s, "</font>"))
-            --k;
+			--k;
 	}
 	for (int i = 0; i < 50; ++i)
 		if (p[i])
