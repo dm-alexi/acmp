@@ -3,25 +3,18 @@
 int main()
 {
 	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
-	int n, i = 1, a = 1, b;
+	int n, i = 1;
 
 	fscanf(f, "%d", &n);
-	b = n;
 	if (n % 4)
 	{
-		fprintf(q, "%d 1 %d %d\n", i, 0, a++);
+		fprintf(q, "1 1 0 1\n");
 		if (n > 1)
-			fprintf(q, "%d 2 %d %d\n", i++, a++, n % 4 > 2 ? b-- : 0);
-		if (n > 3)
-		{
-			fprintf(q, "%d 1 %d %d\n", i, n % 4 > 1 ? b-- : 0, a++);
-			fprintf(q, "%d 2 %d %d\n", i++, a++, b--);
-		}
+			fprintf(q, "%d 2 2 %d\n", i++, n % 4 == 3 ? n-- : 0);
+		if (n > 2 && n % 4 == 1)
+			fprintf(q, "2 1 0 3\n%d 2 4 %d\n", i++, n--);
 	}
-	while (a < b)
-	{
-		fprintf(q, "%d 1 %d %d\n", i, b--, a++);
-		fprintf(q, "%d 2 %d %d\n", i++, a++, b--);
-	}
+	for (; 2 * i < n; ++i, n -= 2)
+		fprintf(q, "%d 1 %d %d\n%d 2 %d %d\n", i, n, 2 * i - 1, i, 2 * i, n - 1);
 	return 0;
 }
