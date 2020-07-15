@@ -5,4 +5,4 @@ with open("input.txt", "r") as f, open("output.txt", "w") as q:
     m = 1
     for x in s[min(smin, smax) + 1 : max(smin, smax)]:
         m *= x
-    q.write('{} {}'.format(t, m))
+    q.write(f'{t} {m}')
