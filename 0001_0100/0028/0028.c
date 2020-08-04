@@ -3,12 +3,12 @@
 int main()
 {
 	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
-	int x1, y1, x2, y2, xa, ya, xb, yb;
+	int x1, y1, x2, y2, x, y;
 
-	fscanf(f,"%d%d%d%d%d%d", &x1, &y1, &x2, &y2, &xa, &ya);
+	fscanf(f,"%d%d%d%d%d%d", &x1, &y1, &x2, &y2, &x, &y);
 	if (x1 == x2)
-		yb = ya, xb = 2 * x1 - xa;
-	else yb = 2 * y1 - ya, xb = xa;
-	fprintf(q, "%d %d", xb, yb);
+		x = 2 * x1 - x;
+	else y = 2 * y1 - y;
+	fprintf(q, "%d %d", x, y);
 	return 0;
 }

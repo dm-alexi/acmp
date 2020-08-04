@@ -5,7 +5,7 @@ int main()
 	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
 	int a[10] = {0}, i, s[3], t[3];
 
-	fscanf(f, "%d:%d:%d\n%d%:%d:%d", s, s + 1, s + 2, t, t + 1,  t + 2);
+	fscanf(f, "%d:%d:%d\n%d:%d:%d", s, s + 1, s + 2, t, t + 1, t + 2);
 	for (;;)
 	{
 		for (i = 0; i < 3; ++i)
