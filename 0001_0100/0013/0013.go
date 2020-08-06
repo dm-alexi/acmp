@@ -19,5 +19,5 @@ func main() {
 			k++
 		}
 	}
-	fmt.Fprint(q, b, " ", k)
+	fmt.Fprint(q, b, k)
 }

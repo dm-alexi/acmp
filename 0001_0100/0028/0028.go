@@ -15,5 +15,5 @@ func main() {
 	} else {
 		y = 2*y1 - y
 	}
-	fmt.Fprint(q, x, " ", y)
+	fmt.Fprint(q, x, y)
 }

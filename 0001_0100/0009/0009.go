@@ -29,5 +29,5 @@ func main() {
 	for i := mini + 1; i < maxi; i++ {
 		m *= p[i]
 	}
-	fmt.Fprint(q, s, " ", m)
+	fmt.Fprint(q, s, m)
 }
