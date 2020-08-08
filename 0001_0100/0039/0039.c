@@ -13,7 +13,7 @@ int main()
 	for (int i = 0; i < n; ++i)
 	{
 		int m = i;
-		for(int j = i; j < n; ++j)
+		for (int j = i; j < n; ++j)
 			if (p[j] > p[m])
 				m = j;
 		s += (m - i + 1) * p[m];
