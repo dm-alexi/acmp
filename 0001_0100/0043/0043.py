@@ -5,6 +5,6 @@ with open("input.txt", "r") as f, open("output.txt", "w") as q:
             t += 1
         else:
             if t > m:
-                m = t;
+                m = t
             t = 0
     q.write(str(m))

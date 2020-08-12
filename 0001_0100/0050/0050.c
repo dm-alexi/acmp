@@ -10,9 +10,7 @@ int main()
 	fscanf(f, "%s%s", s, t);
 	ls = strlen(s);
 	lt = strlen(t);
-	for (i = 0; i < lt - 1; ++i)
-		t[lt + i] = t[i];
-	t[2 * lt - 1] = '\0';
+	memcpy(t + lt, t, lt + 1);
 	for (i = 0; i < ls - lt + 1; ++i)
 		for (j = 0; j < lt; ++j)
 			if (!strncmp(s + i, t + j, lt) && ++n)

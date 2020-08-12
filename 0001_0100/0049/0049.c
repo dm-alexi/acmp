@@ -1,36 +1,27 @@
 #include <stdio.h>
 
-void bord(char a, int *min, int *max)
+int count(int n)
 {
-	if (a >= '0' && a <= '9')
-		*min = *max = a - '0';
-	else if (a == '?')
-		*min = 0, *max = 9;
-	else *min = a - 'a', *max = a - 'a' + 3;
-}
-
-int both(char a, char b)
-{
-	int amin, amax, bmin, bmax;
-
-	bord(a, &amin, &amax);
-	bord(b, &bmin, &bmax);
-	if (bmin > amin)
-		amin = bmin;
-	if (bmax < amax)
-		amax = bmax;
-	return amax - amin < 0 ? 0 : amax - amin + 1;
+	int s = 0;
+	while (n)
+		s++, n &= n - 1;
+	return s;
 }
 
 int main()
 {
 	FILE *f = fopen("input.txt", "r"), *q = fopen("output.txt", "w");
-	char s[10], p[10];
-	int k = 1;
+	char s[10], t[10];
+	int k = 1, p[104];
 
-	fscanf(f, "%s%s", s, p);
-	for (int i = 0; s[i]; ++i)
-		k *= both(s[i], p[i]);
+	fscanf(f, "%s%s", s, t);
+	for (int i = '0'; i <= '9'; ++i)
+		p[i] = 1 << i - '0';
+	for (int i = 'a'; i <= 'g'; ++i)
+		p[i] = 15 << i - 'a';
+	p['?'] = 1023;
+	for (int i = 0; s[i] && k; ++i)
+		k *= count(p[s[i]] & p[t[i]]);
 	fprintf(q, "%d", k);
 	return 0;
 }
