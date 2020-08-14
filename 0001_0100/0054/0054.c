@@ -10,7 +10,7 @@ int main()
 	p = (int*)malloc(sizeof(int) * m);
 	for (int i = 0; i < m; ++i)
 		p[i] = -1000;
-	for (int i = 0; i < n; ++i)
+	while (n--)
 	{
 		int min = 1000, k;
 		for (int j = 0; j < m; ++j)
@@ -19,7 +19,7 @@ int main()
 			if (k < min)
 				min = k;
 			if (k > p[j])
-				p [j] = k;
+				p[j] = k;
 		}
 		if (min > maxmin)
 			maxmin = min;

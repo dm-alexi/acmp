@@ -7,12 +7,7 @@ int main()
 
 	fscanf(f, "%d%d", &n, &k);
 	while (n)
-	{
-		i = n % k;
-		s += i;
-		m *= i;
-		n /= k;
-	}
+		i = n % k, s += i, m *= i, n /= k;
 	fprintf(q, "%d", m - s);
 	return 0;
 }
