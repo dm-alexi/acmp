@@ -6,6 +6,6 @@ int main()
 	char s[3];
 
 	fscanf(f, "%s", s);
-	fprintf(f, ((s[0] - 'A' + 1 + s[1] - '0') % 2) ? "WHITE" : "BLACK");
+	fprintf(q, (s[0] - 'A' + s[1] - '0') % 2 ? "BLACK" : "WHITE");
 	return 0;
 }
