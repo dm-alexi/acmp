@@ -7,10 +7,7 @@ int main()
 
 	fscanf(f, "%d%d", &n, &m);
 	while (n--)
-	{
-		fscanf(f, "%d", &k);
-		a[k] = 1;
-	}
+		fscanf(f, "%d", &k), a[k] = 1;
 	while (m--)
 	{
 		fscanf(f, "%d", &k);
